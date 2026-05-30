@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ОСНОВА — строительство загородных домов под ключ</title>
+  <meta name="description" content="Строим каркасные, газобетонные и кирпичные дома под ключ. Фиксированная цена по договору, своя бригада, гарантия 50 лет." />
+
+  <!-- Tailwind CSS v4 (browser build из этого же репозитория) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Шрифт с поддержкой кириллицы -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+      /* Фирменный цвет — тёплая терракота */
+      --color-brand-50:  #fff7ed;
+      --color-brand-100: #ffedd5;
+      --color-brand-200: #fed7aa;
+      --color-brand-300: #fdba74;
+      --color-brand-400: #fb923c;
+      --color-brand-500: #f97316;
+      --color-brand-600: #ea580c;
+      --color-brand-700: #c2410c;
+      --color-brand-800: #9a3412;
+      --color-brand-900: #7c2d12;
+
+      --animate-float: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-12px); }
+    }
+  </style>
+
+  <style>
+    /* Лёгкое появление секций при загрузке */
+    @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+    .rise { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+  </style>
+</head>
+
+<body class="bg-stone-50 font-sans text-stone-800 antialiased selection:bg-brand-600 selection:text-white">
+
+  <!-- ╔══════════════════════════ ВЕРХНЯЯ ПЛАШКА ══════════════════════════╗ -->
+  <div class="hidden bg-stone-900 text-stone-300 md:block">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 text-sm">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-2">
+          <svg class="size-4 text-brand-500" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
+          Москва и область
+        </span>
+        <span>Пн–Вс: 9:00–21:00</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#" class="transition hover:text-white">Гарантия 50 лет</a>
+        <a href="tel:+74951234567" class="font-semibold text-white transition hover:text-brand-400">+7 (495) 123-45-67</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ╔══════════════════════════ ШАПКА / НАВИГАЦИЯ ══════════════════════════╗ -->
+  <header class="sticky top-0 z-50 border-b border-stone-200/70 bg-stone-50/85 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <!-- Логотип -->
+      <a href="#" class="flex items-center gap-2.5">
+        <span class="grid size-9 place-items-center rounded-lg bg-brand-600 text-white shadow-lg shadow-brand-600/30">
+          <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75"/></svg>
+        </span>
+        <span class="text-xl font-extrabold tracking-tight text-stone-900">ОСНОВА</span>
+      </a>
+
+      <!-- Меню (десктоп) -->
+      <div class="hidden items-center gap-8 lg:flex">
+        <a href="#services"  class="text-sm font-medium text-stone-600 transition hover:text-brand-600">Услуги</a>
+        <a href="#projects"  class="text-sm font-medium text-stone-600 transition hover:text-brand-600">Проекты</a>
+        <a href="#process"   class="text-sm font-medium text-stone-600 transition hover:text-brand-600">Этапы</a>
+        <a href="#pricing"   class="text-sm font-medium text-stone-600 transition hover:text-brand-600">Цены</a>
+        <a href="#reviews"   class="text-sm font-medium text-stone-600 transition hover:text-brand-600">Отзывы</a>
+        <a href="#faq"       class="text-sm font-medium text-stone-600 transition hover:text-brand-600">Вопросы</a>
+      </div>
+
+      <div class="hidden items-center gap-3 lg:flex">
+        <a href="tel:+74951234567" class="text-sm font-bold text-stone-900">+7 (495) 123-45-67</a>
+        <a href="#cta" class="rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-700 hover:shadow-brand-700/40">Рассчитать дом</a>
+      </div>
+
+      <!-- Бургер (мобильный, чистый CSS через checkbox) -->
+      <input type="checkbox" id="nav" class="peer hidden" />
+      <label for="nav" class="grid size-10 cursor-pointer place-items-center rounded-lg text-stone-800 transition hover:bg-stone-200 lg:hidden">
+        <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+      </label>
+
+      <!-- Мобильное меню -->
+      <div class="absolute inset-x-0 top-full hidden flex-col gap-1 border-b border-stone-200 bg-stone-50 p-4 shadow-xl peer-checked:flex lg:hidden">
+        <a href="#services" class="rounded-lg px-4 py-3 font-medium text-stone-700 transition hover:bg-stone-100">Услуги</a>
+        <a href="#projects" class="rounded-lg px-4 py-3 font-medium text-stone-700 transition hover:bg-stone-100">Проекты</a>
+        <a href="#process"  class="rounded-lg px-4 py-3 font-medium text-stone-700 transition hover:bg-stone-100">Этапы</a>
+        <a href="#pricing"  class="rounded-lg px-4 py-3 font-medium text-stone-700 transition hover:bg-stone-100">Цены</a>
+        <a href="#reviews"  class="rounded-lg px-4 py-3 font-medium text-stone-700 transition hover:bg-stone-100">Отзывы</a>
+        <a href="#cta" class="mt-2 rounded-xl bg-brand-600 px-4 py-3 text-center font-semibold text-white">Рассчитать стоимость</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ╔══════════════════════════ HERO ══════════════════════════╗ -->
+  <section class="relative isolate overflow-hidden bg-stone-900">
+    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=2000&q=80"
+         alt="Современный загородный дом" loading="eager"
+         class="absolute inset-0 -z-10 size-full object-cover opacity-55" />
+    <div class="absolute inset-0 -z-10 bg-linear-to-r from-stone-950 via-stone-950/80 to-stone-900/30"></div>
+
+    <div class="mx-auto grid max-w-7xl gap-12 px-6 py-24 sm:py-32 lg:grid-cols-12 lg:py-40">
+      <div class="rise lg:col-span-7">
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-brand-200 ring-1 ring-inset ring-white/15 backdrop-blur">
+          <span class="size-2 rounded-full bg-brand-500"></span>
+          Строим по всей России с 2009 года
+        </span>
+
+        <h1 class="mt-6 text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-6xl">
+          Дома, в которых
+          <span class="bg-linear-to-r from-brand-400 to-amber-300 bg-clip-text text-transparent">хочется жить</span>
+        </h1>
+
+        <p class="mt-6 max-w-xl text-lg leading-relaxed text-stone-300">
+          Проектируем и строим каркасные, газобетонные и кирпичные дома под ключ.
+          Фиксированная цена в договоре, своя бригада без посредников и гарантия&nbsp;50&nbsp;лет на&nbsp;конструктив.
+        </p>
+
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+          <a href="#cta" class="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-600 px-7 py-4 text-base font-semibold text-white shadow-xl shadow-brand-600/30 transition hover:bg-brand-700 hover:-translate-y-0.5">
+            Рассчитать стоимость
+            <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          </a>
+          <a href="#projects" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white/10 px-7 py-4 text-base font-semibold text-white ring-1 ring-inset ring-white/20 backdrop-blur transition hover:bg-white/20">
+            Смотреть проекты
+          </a>
+        </div>
+
+        <!-- Мини-статистика -->
+        <dl class="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-white/10 pt-8">
+          <div>
+            <dt class="text-3xl font-extrabold text-white">500+</dt>
+            <dd class="mt-1 text-sm text-stone-400">домов сдано</dd>
+          </div>
+          <div>
+            <dt class="text-3xl font-extrabold text-white">15 лет</dt>
+            <dd class="mt-1 text-sm text-stone-400">на рынке</dd>
+          </div>
+          <div>
+            <dt class="text-3xl font-extrabold text-white">50 лет</dt>
+            <dd class="mt-1 text-sm text-stone-400">гарантия</dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Плавающая карточка с расчётом -->
+      <div class="rise lg:col-span-5 lg:self-center">
+        <div class="animate-float rounded-3xl bg-white/95 p-7 shadow-2xl ring-1 ring-black/5 backdrop-blur">
+          <p class="text-sm font-semibold uppercase tracking-wider text-brand-600">Старт строительства</p>
+          <p class="mt-2 text-stone-600">Каркасный дом «под ключ»</p>
+          <p class="mt-4 flex items-baseline gap-2">
+            <span class="text-4xl font-extrabold text-stone-900">от 38 900 ₽</span>
+            <span class="text-stone-500">/ м²</span>
+          </p>
+          <ul class="mt-6 space-y-3 text-sm">
+            <li class="flex items-center gap-3 text-stone-700"><svg class="size-5 shrink-0 text-brand-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 0 1 1.4-1.4l3.3 3.29 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg> Бесплатный проект и смета</li>
+            <li class="flex items-center gap-3 text-stone-700"><svg class="size-5 shrink-0 text-brand-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 0 1 1.4-1.4l3.3 3.29 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg> Фиксированная цена в договоре</li>
+            <li class="flex items-center gap-3 text-stone-700"><svg class="size-5 shrink-0 text-brand-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 0 1 1.4-1.4l3.3 3.29 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg> Рассрочка 0% на 12 месяцев</li>
+          </ul>
+          <a href="#cta" class="mt-7 block rounded-xl bg-stone-900 py-3.5 text-center font-semibold text-white transition hover:bg-stone-800">Получить расчёт за 1 день</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════ ПОЛОСА ДОВЕРИЯ ══════════════════════════╗ -->
+  <section class="border-b border-stone-200 bg-white">
+    <div class="mx-auto grid max-w-7xl grid-cols-2 gap-px overflow-hidden px-6 py-10 sm:grid-cols-4">
+      <div class="px-4 text-center">
+        <p class="text-3xl font-extrabold text-stone-900">100%</p>
+        <p class="mt-1 text-sm text-stone-500">работ по договору</p>
+      </div>
+      <div class="px-4 text-center">
+        <p class="text-3xl font-extrabold text-stone-900">12 мес</p>
+        <p class="mt-1 text-sm text-stone-500">рассрочка 0%</p>
+      </div>
+      <div class="px-4 text-center">
+        <p class="text-3xl font-extrabold text-stone-900">28</p>
+        <p class="mt-1 text-sm text-stone-500">бригад в штате</p>
+      </div>
+      <div class="px-4 text-center">
+        <p class="text-3xl font-extrabold text-stone-900">4.9 / 5</p>
+        <p class="mt-1 text-sm text-stone-500">рейтинг клиентов</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════ УСЛУГИ ══════════════════════════╗ -->
+  <section id="services" class="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 sm:py-28">
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="text-sm font-bold uppercase tracking-widest text-brand-600">Что мы строим</p>
+      <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-stone-900 sm:text-4xl">Технологии под любой бюджет</h2>
+      <p class="mt-4 text-lg text-stone-600">Подберём оптимальное решение под ваш участок, климат и сроки — от быстрого каркасника до капитального кирпичного дома.</p>
+    </div>
+
+    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Карточка услуги -->
+      <article class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl">
+        <div class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt="Каркасный дом" class="size-full object-cover transition duration-500 group-hover:scale-105" />
+          <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-stone-900 backdrop-blur">от 38 900 ₽/м²</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-stone-900">Каркасные дома</h3>
+          <p class="mt-2 text-stone-600">Тёплые и быстрые в монтаже. Заселение уже через 2–3 месяца, идеальны для ПМЖ.</p>
+          <a href="#cta" class="mt-4 inline-flex items-center gap-1.5 font-semibold text-brand-600 transition group-hover:gap-2.5">Подробнее <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+        </div>
+      </article>
+
+      <article class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl">
+        <div class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=900&q=80" alt="Дом из газобетона" class="size-full object-cover transition duration-500 group-hover:scale-105" />
+          <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-stone-900 backdrop-blur">от 47 500 ₽/м²</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-stone-900">Дома из газобетона</h3>
+          <p class="mt-2 text-stone-600">Капитальное жильё с отличной тепло- и звукоизоляцией. Золотая середина цены и качества.</p>
+          <a href="#cta" class="mt-4 inline-flex items-center gap-1.5 font-semibold text-brand-600 transition group-hover:gap-2.5">Подробнее <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+        </div>
+      </article>
+
+      <article class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl">
+        <div class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=900&q=80" alt="Кирпичный дом" class="size-full object-cover transition duration-500 group-hover:scale-105" />
+          <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-stone-900 backdrop-blur">от 61 000 ₽/м²</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-stone-900">Кирпичные дома</h3>
+          <p class="mt-2 text-stone-600">Премиальная классика на века. Максимальная прочность и солидный внешний вид.</p>
+          <a href="#cta" class="mt-4 inline-flex items-center gap-1.5 font-semibold text-brand-600 transition group-hover:gap-2.5">Подробнее <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+        </div>
+      </article>
+
+      <article class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl">
+        <div class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=900&q=80" alt="Дом из бруса" class="size-full object-cover transition duration-500 group-hover:scale-105" />
+          <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-stone-900 backdrop-blur">от 42 000 ₽/м²</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-stone-900">Дома из бруса</h3>
+          <p class="mt-2 text-stone-600">Натуральное дерево, экология и неповторимый аромат. Эстетика загородной жизни.</p>
+          <a href="#cta" class="mt-4 inline-flex items-center gap-1.5 font-semibold text-brand-600 transition group-hover:gap-2.5">Подробнее <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+        </div>
+      </article>
+
+      <article class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl">
+        <div class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80" alt="Бани и гостевые дома" class="size-full object-cover transition duration-500 group-hover:scale-105" />
+          <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-stone-900 backdrop-blur">от 320 000 ₽</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-stone-900">Бани и гостевые дома</h3>
+          <p class="mt-2 text-stone-600">Дополним участок баней, гаражом или беседкой в едином стиле с домом.</p>
+          <a href="#cta" class="mt-4 inline-flex items-center gap-1.5 font-semibold text-brand-600 transition group-hover:gap-2.5">Подробнее <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+        </div>
+      </article>
+
+      <article class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200 transition hover:-translate-y-1 hover:shadow-xl">
+        <div class="relative h-52 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=900&q=80" alt="Проектирование" class="size-full object-cover transition duration-500 group-hover:scale-105" />
+          <span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-stone-900 backdrop-blur">бесплатно при заказе</span>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-stone-900">Проектирование</h3>
+          <p class="mt-2 text-stone-600">Индивидуальный архитектурный проект или адаптация готового — с 3D-визуализацией.</p>
+          <a href="#cta" class="mt-4 inline-flex items-center gap-1.5 font-semibold text-brand-600 transition group-hover:gap-2.5">Подробнее <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════ ПРЕИМУЩЕСТВА ══════════════════════════╗ -->
+  <section class="bg-stone-900 py-20 sm:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-sm font-bold uppercase tracking-widest text-brand-500">Почему ОСНОВА</p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">6 причин доверить дом нам</h2>
+      </div>
+
+      <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-2xl bg-white/5 p-7 ring-1 ring-white/10 transition hover:bg-white/10">
+          <div class="grid size-12 place-items-center rounded-xl bg-brand-600/20 text-brand-400">
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+          </div>
+          <h3 class="mt-5 text-lg font-bold text-white">Фиксированная цена</h3>
+          <p class="mt-2 text-stone-400">Сумма из договора не меняется. Никаких «доплатите ещё» в процессе стройки.</p>
+        </div>
+
+        <div class="rounded-2xl bg-white/5 p-7 ring-1 ring-white/10 transition hover:bg-white/10">
+          <div class="grid size-12 place-items-center rounded-xl bg-brand-600/20 text-brand-400">
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"/></svg>
+          </div>
+          <h3 class="mt-5 text-lg font-bold text-white">Своя бригада</h3>
+          <p class="mt-2 text-stone-400">28 штатных бригад без субподрядчиков. Отвечаем за каждый этап лично.</p>
+        </div>
+
+        <div class="rounded-2xl bg-white/5 p-7 ring-1 ring-white/10 transition hover:bg-white/10">
+          <div class="grid size-12 place-items-center rounded-xl bg-brand-600/20 text-brand-400">
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+          </div>
+          <h3 class="mt-5 text-lg font-bold text-white">Гарантия 50 лет</h3>
+          <p class="mt-2 text-stone-400">Официальная гарантия на фундамент и несущие конструкции — закреплена документально.</p>
+        </div>
+
+        <div class="rounded-2xl bg-white/5 p-7 ring-1 ring-white/10 transition hover:bg-white/10">
+          <div class="grid size-12 place-items-center rounded-xl bg-brand-600/20 text-brand-400">
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/></svg>
+          </div>
+          <h3 class="mt-5 text-lg font-bold text-white">Контроль качества</h3>
+          <p class="mt-2 text-stone-400">Технадзор на каждом этапе и фотоотчёты в личном кабинете. Вы видите всё онлайн.</p>
+        </div>
+
+        <div class="rounded-2xl bg-white/5 p-7 ring-1 ring-white/10 transition hover:bg-white/10">
+          <div class="grid size-12 place-items-center rounded-xl bg-brand-600/20 text-brand-400">
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"/></svg>
+          </div>
+          <h3 class="mt-5 text-lg font-bold text-white">Рассрочка 0%</h3>
+          <p class="mt-2 text-stone-400">Беспроцентная рассрочка на 12 месяцев и помощь с ипотекой и материнским капиталом.</p>
+        </div>
+
+        <div class="rounded-2xl bg-white/5 p-7 ring-1 ring-white/10 transition hover:bg-white/10">
+          <div class="grid size-12 place-items-center rounded-xl bg-brand-600/20 text-brand-400">
+            <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"/></svg>
+          </div>
+          <h3 class="mt-5 text-lg font-bold text-white">Точные сроки</h3>
+          <p class="mt-2 text-stone-400">Срыв сроков — штраф в нашу сторону. За каждый день просрочки платим неустойку вам.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════ ПРОЕКТЫ ══════════════════════════╗ -->
+  <section id="projects" class="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 sm:py-28">
+    <div class="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+      <div class="max-w-2xl">
+        <p class="text-sm font-bold uppercase tracking-widest text-brand-600">Каталог проектов</p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-stone-900 sm:text-4xl">Более 120 готовых проектов</h2>
+        <p class="mt-4 text-lg text-stone-600">Любой проект адаптируем под ваш бюджет и участок. Цена — «под ключ» с отделкой.</p>
+      </div>
+      <a href="#cta" class="shrink-0 rounded-xl border border-stone-300 px-6 py-3 font-semibold text-stone-900 transition hover:border-brand-600 hover:text-brand-600">Весь каталог →</a>
+    </div>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Проект -->
+      <article class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200 transition hover:shadow-xl">
+        <div class="relative h-60 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=900&q=80" alt="Проект «Скандинавия»" class="size-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 to-transparent p-4">
+            <div class="flex gap-2 text-xs font-semibold text-white">
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">142 м²</span>
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">2 этажа</span>
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">4 спальни</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between p-6">
+          <div>
+            <h3 class="text-lg font-bold text-stone-900">«Скандинавия»</h3>
+            <p class="text-sm text-stone-500">Каркасный · под ключ</p>
+          </div>
+          <p class="text-right"><span class="block text-xs text-stone-500">от</span><span class="text-xl font-extrabold text-brand-600">5,9 млн ₽</span></p>
+        </div>
+      </article>
+
+      <article class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200 transition hover:shadow-xl">
+        <div class="relative h-60 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=900&q=80" alt="Проект «Барн»" class="size-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 to-transparent p-4">
+            <div class="flex gap-2 text-xs font-semibold text-white">
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">98 м²</span>
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">1 этаж</span>
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">3 спальни</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between p-6">
+          <div>
+            <h3 class="text-lg font-bold text-stone-900">«Барнхаус»</h3>
+            <p class="text-sm text-stone-500">Газобетон · под ключ</p>
+          </div>
+          <p class="text-right"><span class="block text-xs text-stone-500">от</span><span class="text-xl font-extrabold text-brand-600">4,7 млн ₽</span></p>
+        </div>
+      </article>
+
+      <article class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200 transition hover:shadow-xl">
+        <div class="relative h-60 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Проект «Премьер»" class="size-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 to-transparent p-4">
+            <div class="flex gap-2 text-xs font-semibold text-white">
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">210 м²</span>
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">2 этажа</span>
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">5 спален</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between p-6">
+          <div>
+            <h3 class="text-lg font-bold text-stone-900">«Премьер»</h3>
+            <p class="text-sm text-stone-500">Кирпич · под ключ</p>
+          </div>
+          <p class="text-right"><span class="block text-xs text-stone-500">от</span><span class="text-xl font-extrabold text-brand-600">12,8 млн ₽</span></p>
+        </div>
+      </article>
+
+      <article class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200 transition hover:shadow-xl">
+        <div class="relative h-60 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=900&q=80" alt="Проект «Лесная»" class="size-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 to-transparent p-4">
+            <div class="flex gap-2 text-xs font-semibold text-white">
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">120 м²</span>
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">1.5 этажа</span>
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">3 спальни</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between p-6">
+          <div>
+            <h3 class="text-lg font-bold text-stone-900">«Лесная»</h3>
+            <p class="text-sm text-stone-500">Брус · под ключ</p>
+          </div>
+          <p class="text-right"><span class="block text-xs text-stone-500">от</span><span class="text-xl font-extrabold text-brand-600">5,1 млн ₽</span></p>
+        </div>
+      </article>
+
+      <article class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200 transition hover:shadow-xl">
+        <div class="relative h-60 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?auto=format&fit=crop&w=900&q=80" alt="Проект «Минимал»" class="size-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 to-transparent p-4">
+            <div class="flex gap-2 text-xs font-semibold text-white">
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">76 м²</span>
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">1 этаж</span>
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">2 спальни</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between p-6">
+          <div>
+            <h3 class="text-lg font-bold text-stone-900">«Минимал»</h3>
+            <p class="text-sm text-stone-500">Каркасный · под ключ</p>
+          </div>
+          <p class="text-right"><span class="block text-xs text-stone-500">от</span><span class="text-xl font-extrabold text-brand-600">3,4 млн ₽</span></p>
+        </div>
+      </article>
+
+      <article class="group overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-stone-200 transition hover:shadow-xl">
+        <div class="relative h-60 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1592595896551-12b371d546d5?auto=format&fit=crop&w=900&q=80" alt="Проект «Фамильный»" class="size-full object-cover transition duration-500 group-hover:scale-105" />
+          <div class="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 to-transparent p-4">
+            <div class="flex gap-2 text-xs font-semibold text-white">
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">185 м²</span>
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">2 этажа</span>
+              <span class="rounded-md bg-white/20 px-2 py-1 backdrop-blur">4 спальни</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between p-6">
+          <div>
+            <h3 class="text-lg font-bold text-stone-900">«Фамильный»</h3>
+            <p class="text-sm text-stone-500">Газобетон · под ключ</p>
+          </div>
+          <p class="text-right"><span class="block text-xs text-stone-500">от</span><span class="text-xl font-extrabold text-brand-600">9,3 млн ₽</span></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════ ЭТАПЫ РАБОТЫ ══════════════════════════╗ -->
+  <section id="process" class="bg-white scroll-mt-24 py-20 sm:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-sm font-bold uppercase tracking-widest text-brand-600">Как мы работаем</p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-stone-900 sm:text-4xl">6 шагов от заявки до новоселья</h2>
+      </div>
+
+      <ol class="mt-14 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        <li class="relative">
+          <span class="text-5xl font-extrabold text-stone-200">01</span>
+          <h3 class="mt-2 text-lg font-bold text-stone-900">Заявка и консультация</h3>
+          <p class="mt-2 text-stone-600">Обсуждаем пожелания, бюджет и участок. Подбираем технологию и проект.</p>
+        </li>
+        <li class="relative">
+          <span class="text-5xl font-extrabold text-stone-200">02</span>
+          <h3 class="mt-2 text-lg font-bold text-stone-900">Проект и смета</h3>
+          <p class="mt-2 text-stone-600">Готовим архитектурный проект, 3D-визуализацию и прозрачную смету до рубля.</p>
+        </li>
+        <li class="relative">
+          <span class="text-5xl font-extrabold text-stone-200">03</span>
+          <h3 class="mt-2 text-lg font-bold text-stone-900">Договор</h3>
+          <p class="mt-2 text-stone-600">Фиксируем цену, сроки и этапы оплаты. Подписываем договор с гарантиями.</p>
+        </li>
+        <li class="relative">
+          <span class="text-5xl font-extrabold text-stone-200">04</span>
+          <h3 class="mt-2 text-lg font-bold text-stone-900">Фундамент</h3>
+          <p class="mt-2 text-stone-600">Геология, разметка и заливка фундамента под контролем технадзора.</p>
+        </li>
+        <li class="relative">
+          <span class="text-5xl font-extrabold text-stone-200">05</span>
+          <h3 class="mt-2 text-lg font-bold text-stone-900">Строительство</h3>
+          <p class="mt-2 text-stone-600">Возводим коробку, кровлю и инженерные сети. Фотоотчёты каждую неделю.</p>
+        </li>
+        <li class="relative">
+          <span class="text-5xl font-extrabold text-stone-200">06</span>
+          <h3 class="mt-2 text-lg font-bold text-stone-900">Сдача под ключ</h3>
+          <p class="mt-2 text-stone-600">Отделка, приёмка, документы и гарантия. Вручаем ключи от готового дома.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════ ЦЕНЫ ══════════════════════════╗ -->
+  <section id="pricing" class="scroll-mt-24 bg-stone-100 py-20 sm:py-28">
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="text-sm font-bold uppercase tracking-widest text-brand-600">Стоимость строительства</p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-stone-900 sm:text-4xl">Прозрачные пакеты без скрытых доплат</h2>
+        <p class="mt-4 text-lg text-stone-600">Цены указаны за квадратный метр для дома 120 м². Финальная смета — после замера участка.</p>
+      </div>
+
+      <div class="mt-14 grid items-start gap-6 lg:grid-cols-3">
+        <!-- Тариф 1 -->
+        <div class="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-stone-200">
+          <h3 class="text-lg font-bold text-stone-900">Коробка</h3>
+          <p class="mt-2 text-sm text-stone-500">Тёплый контур для самостоятельной отделки</p>
+          <p class="mt-6 flex items-baseline gap-1"><span class="text-4xl font-extrabold text-stone-900">23 500 ₽</span><span class="text-stone-500">/ м²</span></p>
+          <a href="#cta" class="mt-6 block rounded-xl border border-stone-300 py-3 text-center font-semibold text-stone-900 transition hover:border-brand-600 hover:text-brand-600">Выбрать</a>
+          <ul class="mt-7 space-y-3 text-sm text-stone-700">
+            <li class="flex gap-3"><svg class="size-5 shrink-0 text-brand-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 0 1 1.4-1.4l3.3 3.29 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg> Фундамент</li>
+            <li class="flex gap-3"><svg class="size-5 shrink-0 text-brand-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 0 1 1.4-1.4l3.3 3.29 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg> Стены и перекрытия</li>
+            <li class="flex gap-3"><svg class="size-5 shrink-0 text-brand-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 0 1 1.4-1.4l3.3 3.29 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg> Кровля и окна</li>
+          </ul>
+        </div>
+
+        <!-- Тариф 2 (выделенный) -->
+        <div class="relative rounded-3xl bg-stone-900 p-8 shadow-2xl ring-1 ring-stone-900 lg:-mt-4 lg:pb-12">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-600 px-4 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-lg">Хит продаж</span>
+          <h3 class="text-lg font-bold text-white">Под ключ</h3>
+          <p class="mt-2 text-sm text-stone-400">Заезжай и живи — полная чистовая отделка</p>
+          <p class="mt-6 flex items-baseline gap-1"><span class="text-4xl font-extrabold text-white">42 000 ₽</span><span class="text-stone-400">/ м²</span></p>
+          <a href="#cta" class="mt-6 block rounded-xl bg-brand-600 py-3 text-center font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-700">Выбрать</a>
+          <ul class="mt-7 space-y-3 text-sm text-stone-200">
+            <li class="flex gap-3"><svg class="size-5 shrink-0 text-brand-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 0 1 1.4-1.4l3.3 3.29 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg> Всё из тарифа «Коробка»</li>
+            <li class="flex gap-3"><svg class="size-5 shrink-0 text-brand-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 0 1 1.4-1.4l3.3 3.29 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg> Инженерные сети</li>
+            <li class="flex gap-3"><svg class="size-5 shrink-0 text-brand-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 0 1 1.4-1.4l3.3 3.29 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg> Чистовая отделка</li>
+            <li class="flex gap-3"><svg class="size-5 shrink-0 text-brand-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 0 1 1.4-1.4l3.3 3.29 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg> Рассрочка 0%</li>
+          </ul>
+        </div>
+
+        <!-- Тариф 3 -->
+        <div class="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-stone-200">
+          <h3 class="text-lg font-bold text-stone-900">Премиум</h3>
+          <p class="mt-2 text-sm text-stone-500">Дизайн-проект и материалы премиум-класса</p>
+          <p class="mt-6 flex items-baseline gap-1"><span class="text-4xl font-extrabold text-stone-900">68 000 ₽</span><span class="text-stone-500">/ м²</span></p>
+          <a href="#cta" class="mt-6 block rounded-xl border border-stone-300 py-3 text-center font-semibold text-stone-900 transition hover:border-brand-600 hover:text-brand-600">Выбрать</a>
+          <ul class="mt-7 space-y-3 text-sm text-stone-700">
+            <li class="flex gap-3"><svg class="size-5 shrink-0 text-brand-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 0 1 1.4-1.4l3.3 3.29 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg> Всё из тарифа «Под ключ»</li>
+            <li class="flex gap-3"><svg class="size-5 shrink-0 text-brand-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 0 1 1.4-1.4l3.3 3.29 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg> Индивидуальный дизайн</li>
+            <li class="flex gap-3"><svg class="size-5 shrink-0 text-brand-600" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 0 1 1.4-1.4l3.3 3.29 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg> Умный дом и ландшафт</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════ ОТЗЫВЫ ══════════════════════════╗ -->
+  <section id="reviews" class="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 sm:py-28">
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="text-sm font-bold uppercase tracking-widest text-brand-600">Отзывы клиентов</p>
+      <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-stone-900 sm:text-4xl">Нам доверили 500+ домов</h2>
+      <div class="mt-4 flex items-center justify-center gap-1 text-amber-400">
+        <svg class="size-6" viewBox="0 0 20 20" fill="currentColor"><path d="m9.05 2.93.86 2.65a1 1 0 0 0 .95.69h2.79c.97 0 1.37 1.24.59 1.81l-2.26 1.64a1 1 0 0 0-.36 1.12l.86 2.65c.3.92-.76 1.69-1.54 1.12L9.13 13a1 1 0 0 0-1.18 0l-2.26 1.64c-.78.57-1.84-.2-1.54-1.12l.86-2.65a1 1 0 0 0-.36-1.12L2.33 8.08c-.78-.57-.38-1.81.59-1.81h2.79a1 1 0 0 0 .95-.69l.86-2.65c.3-.92 1.6-.92 1.9 0Z"/></svg>
+        <svg class="size-6" viewBox="0 0 20 20" fill="currentColor"><path d="m9.05 2.93.86 2.65a1 1 0 0 0 .95.69h2.79c.97 0 1.37 1.24.59 1.81l-2.26 1.64a1 1 0 0 0-.36 1.12l.86 2.65c.3.92-.76 1.69-1.54 1.12L9.13 13a1 1 0 0 0-1.18 0l-2.26 1.64c-.78.57-1.84-.2-1.54-1.12l.86-2.65a1 1 0 0 0-.36-1.12L2.33 8.08c-.78-.57-.38-1.81.59-1.81h2.79a1 1 0 0 0 .95-.69l.86-2.65c.3-.92 1.6-.92 1.9 0Z"/></svg>
+        <svg class="size-6" viewBox="0 0 20 20" fill="currentColor"><path d="m9.05 2.93.86 2.65a1 1 0 0 0 .95.69h2.79c.97 0 1.37 1.24.59 1.81l-2.26 1.64a1 1 0 0 0-.36 1.12l.86 2.65c.3.92-.76 1.69-1.54 1.12L9.13 13a1 1 0 0 0-1.18 0l-2.26 1.64c-.78.57-1.84-.2-1.54-1.12l.86-2.65a1 1 0 0 0-.36-1.12L2.33 8.08c-.78-.57-.38-1.81.59-1.81h2.79a1 1 0 0 0 .95-.69l.86-2.65c.3-.92 1.6-.92 1.9 0Z"/></svg>
+        <svg class="size-6" viewBox="0 0 20 20" fill="currentColor"><path d="m9.05 2.93.86 2.65a1 1 0 0 0 .95.69h2.79c.97 0 1.37 1.24.59 1.81l-2.26 1.64a1 1 0 0 0-.36 1.12l.86 2.65c.3.92-.76 1.69-1.54 1.12L9.13 13a1 1 0 0 0-1.18 0l-2.26 1.64c-.78.57-1.84-.2-1.54-1.12l.86-2.65a1 1 0 0 0-.36-1.12L2.33 8.08c-.78-.57-.38-1.81.59-1.81h2.79a1 1 0 0 0 .95-.69l.86-2.65c.3-.92 1.6-.92 1.9 0Z"/></svg>
+        <svg class="size-6" viewBox="0 0 20 20" fill="currentColor"><path d="m9.05 2.93.86 2.65a1 1 0 0 0 .95.69h2.79c.97 0 1.37 1.24.59 1.81l-2.26 1.64a1 1 0 0 0-.36 1.12l.86 2.65c.3.92-.76 1.69-1.54 1.12L9.13 13a1 1 0 0 0-1.18 0l-2.26 1.64c-.78.57-1.84-.2-1.54-1.12l.86-2.65a1 1 0 0 0-.36-1.12L2.33 8.08c-.78-.57-.38-1.81.59-1.81h2.79a1 1 0 0 0 .95-.69l.86-2.65c.3-.92 1.6-.92 1.9 0Z"/></svg>
+        <span class="ml-2 font-bold text-stone-900">4.9 из 5</span>
+        <span class="text-stone-500">· 327 отзывов</span>
+      </div>
+    </div>
+
+    <div class="mt-14 grid gap-6 lg:grid-cols-3">
+      <figure class="flex flex-col rounded-2xl bg-white p-7 shadow-sm ring-1 ring-stone-200">
+        <blockquote class="flex-1 text-stone-700">«Построили каркасный дом 140 м² за 3 месяца. Цена ни на рубль не изменилась от сметы. Каждую неделю присылали фото — было видно весь процесс».</blockquote>
+        <figcaption class="mt-6 flex items-center gap-4 border-t border-stone-100 pt-5">
+          <img src="https://i.pravatar.cc/100?img=12" alt="" class="size-12 rounded-full object-cover" />
+          <div><p class="font-bold text-stone-900">Андрей Соколов</p><p class="text-sm text-stone-500">Истра, дом «Скандинавия»</p></div>
+        </figcaption>
+      </figure>
+
+      <figure class="flex flex-col rounded-2xl bg-white p-7 shadow-sm ring-1 ring-stone-200">
+        <blockquote class="flex-1 text-stone-700">«Долго выбирала подрядчика — у ОСНОВЫ единственных была понятная смета без звёздочек. Дом из газобетона сдали в срок, по гарантии устранили мелочь за день».</blockquote>
+        <figcaption class="mt-6 flex items-center gap-4 border-t border-stone-100 pt-5">
+          <img src="https://i.pravatar.cc/100?img=45" alt="" class="size-12 rounded-full object-cover" />
+          <div><p class="font-bold text-stone-900">Мария Кузнецова</p><p class="text-sm text-stone-500">Одинцово, дом «Барнхаус»</p></div>
+        </figcaption>
+      </figure>
+
+      <figure class="flex flex-col rounded-2xl bg-white p-7 shadow-sm ring-1 ring-stone-200">
+        <blockquote class="flex-1 text-stone-700">«Брали премиум-пакет с дизайн-проектом. Результат превзошёл ожидания — соседи теперь спрашивают контакты. Отдельное спасибо прорабу Сергею».</blockquote>
+        <figcaption class="mt-6 flex items-center gap-4 border-t border-stone-100 pt-5">
+          <img src="https://i.pravatar.cc/100?img=33" alt="" class="size-12 rounded-full object-cover" />
+          <div><p class="font-bold text-stone-900">Дмитрий Орлов</p><p class="text-sm text-stone-500">Красногорск, дом «Премьер»</p></div>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════ CTA + ФОРМА ══════════════════════════╗ -->
+  <section id="cta" class="scroll-mt-24 bg-stone-900">
+    <div class="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2 lg:py-28">
+      <div class="lg:pr-10">
+        <p class="text-sm font-bold uppercase tracking-widest text-brand-500">Бесплатный расчёт</p>
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Узнайте стоимость своего дома за 1 день</h2>
+        <p class="mt-4 text-lg text-stone-300">Оставьте заявку — инженер подготовит предварительную смету и подберёт 3 подходящих проекта под ваш бюджет. Без обязательств.</p>
+
+        <ul class="mt-8 space-y-4">
+          <li class="flex items-center gap-3 text-stone-200"><svg class="size-6 shrink-0 text-brand-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 0 1 1.4-1.4l3.3 3.29 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg> Смета и подбор проектов — бесплатно</li>
+          <li class="flex items-center gap-3 text-stone-200"><svg class="size-6 shrink-0 text-brand-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 0 1 1.4-1.4l3.3 3.29 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg> Перезвоним в течение 15 минут</li>
+          <li class="flex items-center gap-3 text-stone-200"><svg class="size-6 shrink-0 text-brand-500" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 9.7a1 1 0 0 1 1.4-1.4l3.3 3.29 6.8-6.8a1 1 0 0 1 1.4 0Z" clip-rule="evenodd"/></svg> Не передаём данные третьим лицам</li>
+        </ul>
+
+        <div class="mt-10 flex items-center gap-4">
+          <a href="tel:+74951234567" class="text-2xl font-extrabold text-white">+7 (495) 123-45-67</a>
+          <span class="text-stone-400">или форма&nbsp;→</span>
+        </div>
+      </div>
+
+      <!-- Форма -->
+      <form class="rounded-3xl bg-white p-7 shadow-2xl sm:p-9" onsubmit="event.preventDefault(); this.reset(); alert('Спасибо! Заявка отправлена — мы перезвоним в течение 15 минут.');">
+        <h3 class="text-xl font-bold text-stone-900">Получить расчёт</h3>
+        <div class="mt-6 space-y-5">
+          <div>
+            <label class="mb-1.5 block text-sm font-medium text-stone-700" for="name">Ваше имя</label>
+            <input id="name" type="text" required placeholder="Иван Иванов"
+                   class="w-full rounded-xl border border-stone-300 px-4 py-3 text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-brand-600 focus:ring-2 focus:ring-brand-600/30" />
+          </div>
+          <div>
+            <label class="mb-1.5 block text-sm font-medium text-stone-700" for="phone">Телефон</label>
+            <input id="phone" type="tel" required placeholder="+7 (___) ___-__-__"
+                   class="w-full rounded-xl border border-stone-300 px-4 py-3 text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-brand-600 focus:ring-2 focus:ring-brand-600/30" />
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="mb-1.5 block text-sm font-medium text-stone-700" for="type">Тип дома</label>
+              <select id="type" class="w-full rounded-xl border border-stone-300 px-4 py-3 text-stone-900 outline-none transition focus:border-brand-600 focus:ring-2 focus:ring-brand-600/30">
+                <option>Каркасный</option>
+                <option>Газобетон</option>
+                <option>Кирпич</option>
+                <option>Брус</option>
+              </select>
+            </div>
+            <div>
+              <label class="mb-1.5 block text-sm font-medium text-stone-700" for="area">Площадь, м²</label>
+              <input id="area" type="number" min="40" placeholder="120"
+                     class="w-full rounded-xl border border-stone-300 px-4 py-3 text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-brand-600 focus:ring-2 focus:ring-brand-600/30" />
+            </div>
+          </div>
+          <button type="submit" class="w-full rounded-xl bg-brand-600 py-4 text-base font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:bg-brand-700 hover:-translate-y-0.5">
+            Получить расчёт стоимости
+          </button>
+          <p class="text-center text-xs text-stone-500">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════ FAQ ══════════════════════════╗ -->
+  <section id="faq" class="mx-auto max-w-3xl scroll-mt-24 px-6 py-20 sm:py-28">
+    <div class="text-center">
+      <p class="text-sm font-bold uppercase tracking-widest text-brand-600">Частые вопросы</p>
+      <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-stone-900 sm:text-4xl">Отвечаем на главное</h2>
+    </div>
+
+    <div class="mt-12 space-y-4">
+      <details class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-200 [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 font-semibold text-stone-900">
+          За какой срок строится дом?
+          <svg class="size-5 shrink-0 text-brand-600 transition group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+        </summary>
+        <p class="mt-4 text-stone-600">Каркасный дом — 2–3 месяца, газобетон и кирпич — 4–7 месяцев в зависимости от площади и отделки. Точный срок фиксируется в договоре.</p>
+      </details>
+
+      <details class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-200 [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 font-semibold text-stone-900">
+          Может ли измениться цена в процессе?
+          <svg class="size-5 shrink-0 text-brand-600 transition group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+        </summary>
+        <p class="mt-4 text-stone-600">Нет. Цена фиксируется в договоре и не меняется, даже если стоимость материалов вырастет. Все работы и материалы прописаны в смете заранее.</p>
+      </details>
+
+      <details class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-200 [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 font-semibold text-stone-900">
+          Работаете ли вы с ипотекой и маткапиталом?
+          <svg class="size-5 shrink-0 text-brand-600 transition group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+        </summary>
+        <p class="mt-4 text-stone-600">Да. Помогаем оформить ипотеку на строительство в банках-партнёрах, принимаем материнский капитал и предлагаем беспроцентную рассрочку на 12 месяцев.</p>
+      </details>
+
+      <details class="group rounded-2xl bg-white p-6 shadow-sm ring-1 ring-stone-200 [&_summary::-webkit-details-marker]:hidden">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 font-semibold text-stone-900">
+          Что входит в гарантию?
+          <svg class="size-5 shrink-0 text-brand-600 transition group-open:rotate-45" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+        </summary>
+        <p class="mt-4 text-stone-600">50 лет на фундамент и несущие конструкции, 5 лет на инженерные системы и 2 года на отделку. Все условия закреплены в договоре.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════ ФУТЕР ══════════════════════════╗ -->
+  <footer class="border-t border-stone-800 bg-stone-950 text-stone-400">
+    <div class="mx-auto max-w-7xl px-6 py-16">
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div>
+          <a href="#" class="flex items-center gap-2.5">
+            <span class="grid size-9 place-items-center rounded-lg bg-brand-600 text-white">
+              <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75"/></svg>
+            </span>
+            <span class="text-xl font-extrabold text-white">ОСНОВА</span>
+          </a>
+          <p class="mt-4 text-sm leading-relaxed">Строим загородные дома под ключ с 2009 года. Фиксированная цена, своя бригада, гарантия 50 лет.</p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white">Услуги</h4>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a href="#services" class="transition hover:text-brand-400">Каркасные дома</a></li>
+            <li><a href="#services" class="transition hover:text-brand-400">Дома из газобетона</a></li>
+            <li><a href="#services" class="transition hover:text-brand-400">Кирпичные дома</a></li>
+            <li><a href="#services" class="transition hover:text-brand-400">Бани и беседки</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white">Компания</h4>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a href="#projects" class="transition hover:text-brand-400">Проекты</a></li>
+            <li><a href="#process" class="transition hover:text-brand-400">Этапы работы</a></li>
+            <li><a href="#reviews" class="transition hover:text-brand-400">Отзывы</a></li>
+            <li><a href="#faq" class="transition hover:text-brand-400">Вопросы и ответы</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white">Контакты</h4>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a href="tel:+74951234567" class="text-base font-bold text-white transition hover:text-brand-400">+7 (495) 123-45-67</a></li>
+            <li>info@osnova-dom.ru</li>
+            <li>Москва, ул. Строителей, 12</li>
+            <li>Пн–Вс: 9:00–21:00</li>
+          </ul>
+          <div class="mt-5 flex gap-3">
+            <a href="#" class="grid size-10 place-items-center rounded-lg bg-white/5 transition hover:bg-brand-600 hover:text-white" aria-label="Telegram"><svg class="size-5" fill="currentColor" viewBox="0 0 24 24"><path d="M21.94 4.6 18.9 19.2c-.23 1.02-.84 1.27-1.7.79l-4.7-3.46-2.26 2.18c-.25.25-.46.46-.94.46l.34-4.78 8.7-7.86c.38-.34-.08-.53-.59-.19L6.7 12.9l-4.64-1.45c-1.01-.32-1.03-1.01.21-1.5l18.16-7c.84-.31 1.58.19 1.31 1.65Z"/></svg></a>
+            <a href="#" class="grid size-10 place-items-center rounded-lg bg-white/5 transition hover:bg-brand-600 hover:text-white" aria-label="WhatsApp"><svg class="size-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.3A10 10 0 1 0 12 2Zm5.1 14.2c-.2.6-1.2 1.1-1.7 1.2-.4.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.7-.9c.2-.2.4-.2.6-.1l1.8.9c.2.1.4.2.5.3.1.2.1.7-.1 1.3Z"/></svg></a>
+            <a href="#" class="grid size-10 place-items-center rounded-lg bg-white/5 transition hover:bg-brand-600 hover:text-white" aria-label="VK"><svg class="size-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.8 16.3c-5.3 0-8.5-3.7-8.6-9.8h2.7c.1 4.5 2 6.4 3.6 6.8V6.5h2.5v3.9c1.5-.2 3.2-2 3.7-3.9h2.5c-.4 2.4-2.1 4.1-3.3 4.8 1.2.6 3.1 2.1 3.8 4.9h-2.8c-.6-1.8-2-3.2-3.9-3.4v3.4h-.4Z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-stone-800 pt-8 text-sm sm:flex-row">
+        <p>© 2026 ОСНОВА. Строительство домов под ключ.</p>
+        <div class="flex gap-6">
+          <a href="#" class="transition hover:text-brand-400">Политика конфиденциальности</a>
+          <a href="#" class="transition hover:text-brand-400">Договор оферты</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
